@@ -1,4 +1,4 @@
-#VRML_SIM R2021a utf8
+#VRML_SIM R2021b utf8
 WorldInfo {
   info [
     "Pioneer 3DX (Adept Mobile Robots)"
@@ -11,8 +11,8 @@ WorldInfo {
 }
 Viewpoint {
   fieldOfView 0.660595
-  orientation -0.24515691146660828 -0.9405734018054015 -0.23498886053676776 1.6861832120582434
-  position -24.832657339630646 13.887400006736742 -0.19283226803258469
+  orientation -0.23053173089617846 -0.9393447954194085 -0.25394187596472073 1.6613576648140742
+  position -14.201798223156183 5.2991416615791005 -3.3352601528512213
 }
 TexturedBackground {
 }
@@ -35,6 +35,7 @@ PottedTree {
 }
 Ball {
   translation 4.05 0.7960760000000001 -2.65
+  rotation 0 1 0 0
   radius 0.8
   mass 10
 }
@@ -118,15 +119,19 @@ WoodenBox {
   size 3 0.6 0.6
 }
 DEF PIONEER_3DX Pioneer3dx {
-  hidden position_0_0 0.00016477693208794382
-  hidden position_0_1 8.73287784838024e-11
-  hidden position_0_2 -8.704148513061227e-11
-  hidden rotation_1 0 1 0 0.00016477693272447347
-  hidden position_1_0 -0.018436409829554298
-  hidden rotation_2 -1 0 0 0.018436409829554457
-  translation -4.563661910918624 0.09694367993648513 -3.7050836705319417
+  translation -4.56366 0.0969437 -3.70508
   rotation -0.007902413155349026 0.9998373860053044 -0.016209670336016058 -2.2344886557765458
-  controller ""
+  controller "webotcode"
+  extensionSlot [
+    LightSensor {
+      translation 0 0.16 -0.15
+      name "light_sensor"
+      lookupTable [
+        0 0 0
+        8 1000 0
+      ]
+    }
+  ]
 }
 CardboardBox {
   translation -0.201269 0.3 -4.79642
@@ -170,9 +175,6 @@ SignPole {
   signBoards [
     DirectionPanel {
       rotation 0 1 0 2.0944
-      backgroundColor 0.1 1 0.3
-      textSize 0.2
-      text "      INÍCIO"
     }
   ]
 }
